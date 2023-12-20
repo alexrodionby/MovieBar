@@ -11,7 +11,7 @@ import SwiftUI
 struct MovieBarApp: App {
     var body: some Scene {
         WindowGroup {
-            TabbarView()
+            TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
         }
     }
 }
