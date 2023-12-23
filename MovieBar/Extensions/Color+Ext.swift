@@ -15,7 +15,8 @@ extension Color {
 }
 
 struct CustomColors {
-//    let background = Color("background")
-//    let gradientLeft = Color("gradientLeft")
-//    let gradientRight = Color("gradientRight")
+    let primaryDark = Color("primaryDark")
+    let primarySoft = Color("primarySoft")
+    let primaryBlue = Color("primaryBlue")
+    let secondaryOrange = Color("secondaryOrange")
 }

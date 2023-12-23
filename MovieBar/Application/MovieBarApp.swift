@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct MovieBarApp: App {
+    
+    @StateObject private var languageManager = LanguageManager()
+    
     var body: some Scene {
         WindowGroup {
-            TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
+            TabbarView()
+                .preferredColorScheme(.dark)
+                .environmentObject(languageManager)
+                .environment(\.locale, .init(identifier: languageManager.currentLanguage))
+            
+//            TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
+//                .preferredColorScheme(.dark)
+//                .environmentObject(languageManager)
+//                .environment(\.locale, .init(identifier: languageManager.currentLanguage))
         }
     }
 }

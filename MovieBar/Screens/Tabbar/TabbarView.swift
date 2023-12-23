@@ -8,11 +8,29 @@
 import SwiftUI
 
 struct TabbarView: View {
+    
+    @State private var tabSelection = 1
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            TabView(selection: $tabSelection) {
+                HomeView()
+                    .tag(1)
+                SearchView()
+                    .tag(2)
+                ChristmasView()
+                    .tag(3)
+                ProfileView()
+                    .tag(4)
+            }
+            .overlay(alignment: .bottom) {
+                TabBottomView(geometry: geometry.size, tabSelection: $tabSelection)
+            }
+        }
     }
 }
 
 #Preview {
     TabbarView()
+        .preferredColorScheme(.dark)
 }
