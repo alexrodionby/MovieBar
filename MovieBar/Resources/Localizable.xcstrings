@@ -1,0 +1,77 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "ChristmasView" : {
+
+    },
+    "English" : {
+
+    },
+    "Fetch" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Запрос"
+          }
+        }
+      }
+    },
+    "Film" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фильм"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Главная"
+          }
+        }
+      }
+    },
+    "HomeView" : {
+
+    },
+    "Language" : {
+
+    },
+    "Profile" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Профиль"
+          }
+        }
+      }
+    },
+    "ProfileView" : {
+
+    },
+    "Russian" : {
+
+    },
+    "Search" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поиск"
+          }
+        }
+      }
+    },
+    "SearchView" : {
+
+    }
+  },
+  "version" : "1.0"
+}
