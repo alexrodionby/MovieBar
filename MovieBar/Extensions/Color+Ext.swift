@@ -15,8 +15,16 @@ extension Color {
 }
 
 struct CustomColors {
+    let primaryBlueAccent = Color("primaryBlueAccent")
     let primaryDark = Color("primaryDark")
     let primarySoft = Color("primarySoft")
-    let primaryBlue = Color("primaryBlue")
+    let secondaryGreen = Color("secondaryGreen")
     let secondaryOrange = Color("secondaryOrange")
+    let secondaryRed = Color("secondaryRed")
+    let textBlack = Color("textBlack")
+    let textDarkGray = Color("textDarkGray")
+    let textGray = Color("textGray")
+    let textLineDark = Color("textLineDark")
+    let textWhite = Color("textWhite")
+    let textWhiteGray = Color("textWhiteGray")
 }

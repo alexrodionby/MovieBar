@@ -47,7 +47,7 @@ struct TabBottomView: View {
                                 .font(Font.custom(.medium, size: Drawing.tabbarFontSize))
                         }
                     }
-                    .foregroundColor(item + 1 == tabSelection ? Color.custom.primaryBlue : Color.gray)
+                    .foregroundColor(item + 1 == tabSelection ? Color.custom.primaryBlueAccent : Color.custom.textGray)
                 }
                 .padding(.vertical, Drawing.buttonVerticalPadding)
                 .padding(.horizontal, Drawing.buttonHorizontalPadding)
