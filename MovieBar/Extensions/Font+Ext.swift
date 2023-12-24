@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+// Добавляем кастомные шрифты для удобного использования
+
 enum CustomFont: String {
     case black = "Montserrat-Black"
     case bold = "Montserrat-Bold"

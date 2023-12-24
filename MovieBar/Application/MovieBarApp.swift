@@ -15,14 +15,10 @@ struct MovieBarApp: App {
     var body: some Scene {
         WindowGroup {
             TabbarView()
+            //TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
                 .preferredColorScheme(.dark)
                 .environmentObject(languageManager)
                 .environment(\.locale, .init(identifier: languageManager.currentLanguage))
-            
-//            TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
-//                .preferredColorScheme(.dark)
-//                .environmentObject(languageManager)
-//                .environment(\.locale, .init(identifier: languageManager.currentLanguage))
         }
     }
 }
