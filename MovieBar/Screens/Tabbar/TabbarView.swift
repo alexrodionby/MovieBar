@@ -14,7 +14,7 @@ struct TabbarView: View {
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $tabSelection) {
-                HomeView(homeVM: HomeViewModel())
+                HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()))
                     .tag(1)
                 SearchView()
                     .tag(2)

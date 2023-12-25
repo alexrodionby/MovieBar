@@ -30,6 +30,9 @@
         }
       }
     },
+    "GET" : {
+
+    },
     "Hello, " : {
       "localizations" : {
         "ru" : {
@@ -52,6 +55,16 @@
     },
     "Language" : {
 
+    },
+    "movies" : {
+      "localizations" : {
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "фильмов"
+          }
+        }
+      }
     },
     "Profile" : {
       "localizations" : {

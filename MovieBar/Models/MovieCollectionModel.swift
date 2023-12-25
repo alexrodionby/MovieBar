@@ -1,5 +1,5 @@
 //
-//  MovieListModel.swift
+//  MovieCollectionModel.swift
 //  MovieBar
 //
 //  Created by Alexandr Rodionov on 20.12.23.
@@ -7,18 +7,25 @@
 
 import Foundation
 
-// MARK: - MovieListModel
-struct MovieListModel: Codable {
+// MARK: - MovieCollectionModel
+struct MovieCollectionModel: Codable {
     var docs: [Doc]?
     var total, limit, page, pages: Int?
 }
 
 // MARK: - Doc
 struct Doc: Codable {
-    var name: String?
+    var category: Category?
+    var name, slug: String?
     var moviesCount: Int?
     var cover: Cover?
     var id: String?
+}
+
+enum Category: String, Codable {
+    case премии = "Премии"
+    case сериалы = "Сериалы"
+    case фильмы = "Фильмы"
 }
 
 // MARK: - Cover
