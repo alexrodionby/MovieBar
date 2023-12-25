@@ -28,6 +28,11 @@
 		A130801A2B371D0900188A9B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A13080192B371D0900188A9B /* Localizable.xcstrings */; };
 		A130801E2B37222400188A9B /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A130801D2B37222400188A9B /* StorageService.swift */; };
 		A13080212B37248600188A9B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080202B37248600188A9B /* LanguageManager.swift */; };
+		A13080242B383CE300188A9B /* AvatarCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080232B383CE300188A9B /* AvatarCircleView.swift */; };
+		A13080262B3847A100188A9B /* LikeHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080252B3847A100188A9B /* LikeHeartView.swift */; };
+		A13080282B386E4300188A9B /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080272B386E4300188A9B /* SearchBarView.swift */; };
+		A130802A2B387F0400188A9B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080292B387F0400188A9B /* HomeViewModel.swift */; };
+		A130802C2B388A1500188A9B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A130802B2B388A1500188A9B /* View+Ext.swift */; };
 		A1AE47032B36FFC400254CB6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */; };
 		A1AE47042B36FFC400254CB6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */; };
 		A1AE47052B36FFC400254CB6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */; };
@@ -66,6 +71,11 @@
 		A13080192B371D0900188A9B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		A130801D2B37222400188A9B /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		A13080202B37248600188A9B /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
+		A13080232B383CE300188A9B /* AvatarCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCircleView.swift; sourceTree = "<group>"; };
+		A13080252B3847A100188A9B /* LikeHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeHeartView.swift; sourceTree = "<group>"; };
+		A13080272B386E4300188A9B /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		A13080292B387F0400188A9B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A130802B2B388A1500188A9B /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 				A10D69502B31E77E00100C19 /* Constants.swift */,
 				A10D69522B31E7A200100C19 /* Color+Ext.swift */,
 				A1AE470D2B37025D00254CB6 /* Font+Ext.swift */,
+				A130802B2B388A1500188A9B /* View+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				A10D695E2B34962400100C19 /* HomeView.swift */,
+				A13080292B387F0400188A9B /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -211,6 +223,16 @@
 			path = Language;
 			sourceTree = "<group>";
 		};
+		A13080222B383C2300188A9B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A13080232B383CE300188A9B /* AvatarCircleView.swift */,
+				A13080252B3847A100188A9B /* LikeHeartView.swift */,
+				A13080272B386E4300188A9B /* SearchBarView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		A1AE46F92B36FF9700254CB6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +271,7 @@
 				A1AE470C2B3700C100254CB6 /* Info.plist */,
 				A1F745CA2B3081E400006699 /* Application */,
 				A1F745CB2B3081EC00006699 /* Screens */,
+				A13080222B383C2300188A9B /* Components */,
 				A10D693B2B31BDAA00100C19 /* Services */,
 				A10D69472B31CC9500100C19 /* Models */,
 				A10D694D2B31E72700100C19 /* Extensions */,
@@ -386,7 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A130802C2B388A1500188A9B /* View+Ext.swift in Sources */,
 				A10D693A2B31B6FD00100C19 /* TestView.swift in Sources */,
+				A13080262B3847A100188A9B /* LikeHeartView.swift in Sources */,
 				A10D69552B33441C00100C19 /* MovieEndpoint.swift in Sources */,
 				A1F745CF2B30823B00006699 /* TabbarView.swift in Sources */,
 				A10D694C2B31E5AE00100C19 /* TestViewModel.swift in Sources */,
@@ -395,10 +420,12 @@
 				A10D69532B31E7A200100C19 /* Color+Ext.swift in Sources */,
 				A10D69612B34962F00100C19 /* SearchView.swift in Sources */,
 				A1AE470E2B37025D00254CB6 /* Font+Ext.swift in Sources */,
+				A130802A2B387F0400188A9B /* HomeViewModel.swift in Sources */,
 				A13080212B37248600188A9B /* LanguageManager.swift in Sources */,
 				A130801E2B37222400188A9B /* StorageService.swift in Sources */,
 				A10D69632B34963D00100C19 /* ChristmasView.swift in Sources */,
 				A10D69572B33511100100C19 /* MovieListModel.swift in Sources */,
+				A13080242B383CE300188A9B /* AvatarCircleView.swift in Sources */,
 				A1F745BD2B30814F00006699 /* MovieBarApp.swift in Sources */,
 				A10D69492B31CCB700100C19 /* ServerResponse.swift in Sources */,
 				A10D694F2B31E74B00100C19 /* Set+Cancellable.swift in Sources */,
@@ -406,6 +433,7 @@
 				A10D693E2B31BDD100100C19 /* APIEndpoint.swift in Sources */,
 				A10D69422B31C03500100C19 /* ContentType.swift in Sources */,
 				A10D695F2B34962400100C19 /* HomeView.swift in Sources */,
+				A13080282B386E4300188A9B /* SearchBarView.swift in Sources */,
 				A10D69652B34964D00100C19 /* ProfileView.swift in Sources */,
 				A10D69442B31C39100100C19 /* APIError.swift in Sources */,
 				A10D69512B31E77E00100C19 /* Constants.swift in Sources */,
