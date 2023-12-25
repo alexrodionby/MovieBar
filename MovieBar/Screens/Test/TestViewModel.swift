@@ -11,17 +11,16 @@ import Combine
 class TestViewModel: ObservableObject {
     
     private var cancellables: Set<AnyCancellable> = .init()
-    
     private let apiClient: HTTPClient
     
-    @Published var movieList: MovieListModel?
+    @Published var movieList: MovieCollectionModel?
     
     init(apiClient: HTTPClient) {
         self.apiClient = apiClient
     }
     
     func getMovieListCollection(parameters: [String: Any]?) {
-        apiClient.request(endpoint: MovieEndpoint.fetchMovieListCollection(parameters))
+        apiClient.request(endpoint: MovieEndpoint.fetchMovieCollections(parameters))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
@@ -30,7 +29,7 @@ class TestViewModel: ObservableObject {
                 case .failure(let error):
                     print("Error: \(error)")
                 }
-            }, receiveValue: { [weak self] (result: MovieListModel) in
+            }, receiveValue: { [weak self] (result: MovieCollectionModel) in
                 self?.movieList = result
                 print("Received data: \(result)")
             })
