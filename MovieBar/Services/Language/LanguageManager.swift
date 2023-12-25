@@ -15,6 +15,6 @@ class LanguageManager: ObservableObject {
     }
     
     init() {
-        self.currentLanguage = UserDefaults.standard.string(forKey: "selectedLanguage") ?? "ru"
+        self.currentLanguage = UserDefaults.standard.string(forKey: "selectedLanguage") ?? "en"
     }
 }

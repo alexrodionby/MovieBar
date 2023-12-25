@@ -44,7 +44,7 @@ struct TabBottomView: View {
                             .frame(width: geometry.height / Drawing.buttonImageRatio, height: geometry.height / Drawing.buttonImageRatio)
                         if item + 1 == tabSelection {
                             Text(tabBarItems[item].title)
-                                .font(Font.custom(.medium, size: Drawing.tabbarFontSize))
+                                .font(.custom(.medium, size: Drawing.tabbarFontSize))
                         }
                     }
                     .foregroundColor(item + 1 == tabSelection ? Color.custom.primaryBlueAccent : Color.custom.textGray)
