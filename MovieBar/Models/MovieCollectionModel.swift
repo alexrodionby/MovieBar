@@ -9,12 +9,12 @@ import Foundation
 
 // MARK: - MovieCollectionModel
 struct MovieCollectionModel: Codable {
-    var docs: [Doc]?
+    var docs: [MovieCollection]?
     var total, limit, page, pages: Int?
 }
 
-// MARK: - Doc
-struct Doc: Codable {
+// MARK: - MovieCollection
+struct MovieCollection: Codable {
     var category: Category?
     var name, slug: String?
     var moviesCount: Int?

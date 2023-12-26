@@ -24,13 +24,18 @@ struct HomeView: View {
                     }
                     Button("GET") {
                         homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
+                        homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
                     }
-                    
-                    MovieCollectionView(collections: homeVM.movieCollections?.docs ?? [])
-                    
-                    CategoryLineView()
-                    
-                    CategoryMenuView(selectedIndex: $homeVM.selectedCategoryIndex)
+                    ScrollView(.vertical, showsIndicators: false) {
+                        MovieCollectionView(collections: homeVM.movieCollections?.docs ?? [])
+                        
+                        CategoryLineView()
+                        
+                        CategoryMenuView(selectedIndex: $homeVM.selectedCategoryIndex)
+                        
+                        MovieByCategoryCollectionView(movies: homeVM.moviesByCategory ?? MovieBigModel())
+                    }
+
                     
                     Spacer()
                 }

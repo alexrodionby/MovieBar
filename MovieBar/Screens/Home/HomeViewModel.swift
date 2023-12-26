@@ -17,8 +17,10 @@ class HomeViewModel: ObservableObject {
         self.apiClient = apiClient
     }
     
-    @Published var searchText: String = ""
     @Published var movieCollections: MovieCollectionModel?
+    @Published var moviesByCategory: MovieBigModel?
+    
+    @Published var searchText: String = ""
     @Published var selectedCategoryIndex = 0
     
     
@@ -39,6 +41,22 @@ class HomeViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
+    }
+    
+    func getMovieByCategory(parameters: [String: Any]?) {
+        apiClient.request(endpoint: MovieEndpoint.fetchMovieByCategory(parameters))
+            .receive(on: DispatchQueue.main)
+            .sink { complition in
+                switch complition {
+                case .finished:
+                    print("getMovieByCategory = OK")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { [weak self] (result: MovieBigModel) in
+                self?.moviesByCategory = result
+            }
+            .store(in: &cancellables)
     }
     
 }

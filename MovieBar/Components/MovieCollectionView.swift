@@ -9,14 +9,14 @@ import SwiftUI
 
 struct MovieCollectionView: View {
     
-    var collections: [Doc]
+    var collections: [MovieCollection]
     var scrollViewAxis: Axis.Set = .horizontal
     var shshowScrollIndicators: Bool = false
     var cellSpacing: CGFloat = 20
     var cellHeight: CGFloat = 250
     var cellWidth: CGFloat = 250
     
-    init(collections: [Doc]) {
+    init(collections: [MovieCollection]) {
         self.collections = collections
     }
     
@@ -33,5 +33,5 @@ struct MovieCollectionView: View {
 }
 
 #Preview {
-    MovieCollectionView(collections: [Doc].init())
+    MovieCollectionView(collections: [MovieCollection].init())
 }

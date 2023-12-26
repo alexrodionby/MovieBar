@@ -69,11 +69,28 @@ struct QueryParameters {
 
 // MARK: - Query arrays
     
+    /// Для запроса коллекций фильмов на главном экране
     static let getMovieCollections: [String: Any] = [
         "page": 1,
         "limit": 20,
         "selectFields": ["name", "category", "slug", "moviesCount", "cover"],
         "notNullFields": ["name", "category", "slug", "moviesCount", "cover.url", "cover.previewUrl"]
+    ]
+    
+    /*
+     https://api.kinopoisk.dev/v1.4/movie?
+     page=1
+     &limit=20
+     &selectFields=id&selectFields=name&selectFields=enName&selectFields=rating&selectFields=genres&selectFields=poster
+     &notNullFields=id&notNullFields=name&notNullFields=enName&notNullFields=rating.kp&notNullFields=genres.name&notNullFields=poster.url
+     */
+    
+    /// Для запроса списка филмов по категории
+    static let getMovieByCategory: [String: Any] = [
+        "page": 1,
+        "limit": 20,
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster"],
+        "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
     ]
     
 }

@@ -10,9 +10,9 @@ import Kingfisher
 
 struct MovieHorizontalMainCell: View {
     
-    var movieCollection: Doc
+    var movieCollection: MovieCollection
     
-    init(movieCollection: Doc) {
+    init(movieCollection: MovieCollection) {
         self.movieCollection = movieCollection
     }
     
@@ -64,5 +64,5 @@ struct MovieHorizontalMainCell: View {
 }
 
 #Preview {
-    MovieHorizontalMainCell(movieCollection: Doc())
+    MovieHorizontalMainCell(movieCollection: MovieCollection())
 }
