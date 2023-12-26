@@ -9,6 +9,7 @@ import Foundation
 
 enum MovieEndpoint {
     case fetchMovieCollections([String: Any]?)
+    case fetchMovieByCategory([String: Any]?)
 }
 
 extension MovieEndpoint: APIEndpoint {
@@ -30,6 +31,8 @@ extension MovieEndpoint: APIEndpoint {
         switch self {
         case .fetchMovieCollections:
             return "/v1.4/list"
+        case .fetchMovieByCategory:
+            return "/v1.4/movie"
         }
     }
     
@@ -37,12 +40,16 @@ extension MovieEndpoint: APIEndpoint {
         switch self {
         case .fetchMovieCollections:
             return .get
+        case .fetchMovieByCategory:
+            return .get
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
         case .fetchMovieCollections(let parameters):
+            return parameters
+        case .fetchMovieByCategory(let parameters):
             return parameters
         }
     }
@@ -65,6 +72,8 @@ extension MovieEndpoint: APIEndpoint {
         switch self {
         case .fetchMovieCollections:
             return .json
+        case .fetchMovieByCategory:
+            return .json
         }
     }
     
@@ -72,10 +81,8 @@ extension MovieEndpoint: APIEndpoint {
         switch self {
         case .fetchMovieCollections:
             return .json
+        case .fetchMovieByCategory:
+            return .json
         }
     }
-    
-    
-    
-    
 }
