@@ -11,6 +11,7 @@ struct CategoryElementView: View {
     
     var categoryIndex: Int
     @Binding var selectedIndex: Int
+    var selectAction: ((Int) -> Void)?
     
     var body: some View {
         VStack {
@@ -28,8 +29,8 @@ struct CategoryElementView: View {
             withAnimation {
                 selectedIndex = categoryIndex
             }
-            // вызов сетевого запроса
             print("Делаем сетевой запрос")
+            selectAction?(selectedIndex)
         }
     }
 }

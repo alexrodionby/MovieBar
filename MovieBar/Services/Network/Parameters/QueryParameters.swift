@@ -55,6 +55,14 @@ struct QueryParameters {
         ["церемония", "ceremoniya"]
     ]
     
+    static let categoryForQuery = [
+        "аниме", "биография", "боевик", "вестерн", "военный", "детектив",
+        "детский", "для взрослых", "документальный", "драма", "игра", "история",
+        "комедия", "концерт", "короткометражка", "криминал", "мелодрама", "музыка",
+        "мультфильм", "мюзикл", "новости", "приключения", "реальное ТВ", "семейный",
+        "спорт", "ток-шоу", "триллер", "ужасы", "фантастика", "фильм-нуар", "фэнтези", "церемония"
+    ]
+    
     static let categoryEN = [
         "All", "Anime", "Biografiya", "Boevik", "Vestern", "Voennyy", "Detektiv",
         "Detskiy", "Dlya-vzroslyh", "Dokumentalnyy", "Drama", "Igra", "Istoriya",
@@ -76,14 +84,6 @@ struct QueryParameters {
         "selectFields": ["name", "category", "slug", "moviesCount", "cover"],
         "notNullFields": ["name", "category", "slug", "moviesCount", "cover.url", "cover.previewUrl"]
     ]
-    
-    /*
-     https://api.kinopoisk.dev/v1.4/movie?
-     page=1
-     &limit=20
-     &selectFields=id&selectFields=name&selectFields=enName&selectFields=rating&selectFields=genres&selectFields=poster
-     &notNullFields=id&notNullFields=name&notNullFields=enName&notNullFields=rating.kp&notNullFields=genres.name&notNullFields=poster.url
-     */
     
     /// Для запроса списка филмов по категории
     static let getMovieByCategory: [String: Any] = [
