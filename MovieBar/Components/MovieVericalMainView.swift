@@ -20,7 +20,6 @@ struct MovieVericalMainView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            
             KFImage(URL(string: movieByCategory.poster?.previewURL ?? ""))
                 .resizable()
                 .scaledToFill()
@@ -45,12 +44,28 @@ struct MovieVericalMainView: View {
                     .truncationMode(.tail)
                     .padding(.horizontal, textPadding)
             }
-            
             Spacer()
         }
         .frame(width: cellWidth, height: cellHeight)
         .background(Color.custom.primarySoft)
         .clipShape(RoundedRectangle(cornerRadius: cellCornerRadius))
+        .overlay(alignment: .topTrailing) {
+            HStack {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(Color.custom.secondaryOrange)
+                Text(String(format: "%.1f", movieByCategory.rating?.kp ?? 0.0))
+                    .font(.custom(.semiBold, size: 16))
+                    .foregroundStyle(Color.custom.secondaryOrange)
+            }
+            .padding(4)
+            .background(
+                RoundedRectangle(cornerRadius: 8)
+                    .blur(radius: 5)
+                    .foregroundColor(Color.black.opacity(0.5))
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            )
+            .padding(8)
+        }
     }
 }
 

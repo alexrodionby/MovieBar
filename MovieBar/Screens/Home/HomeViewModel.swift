@@ -19,6 +19,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var movieCollections: MovieCollectionModel?
     @Published var moviesByCategory: MovieBigModel?
+    @Published var mostPopularMovies: MovieBigModel?
     
     @Published var searchText: String = ""
     @Published var selectedCategoryIndex = 0
@@ -55,6 +56,32 @@ class HomeViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] (result: MovieBigModel) in
                 self?.moviesByCategory = result
+            }
+            .store(in: &cancellables)
+    }
+    
+    func getMovieByOneCategory(index: Int, parameters: [String: Any]?) {
+        if index == 0 {
+            getMovieByCategory(parameters: parameters)
+        } else {
+            var query = parameters
+            query?["genres.name"] = QueryParameters.categoryForQuery[index - 1]
+            getMovieByCategory(parameters: query)
+        }
+    }
+    
+    func getPopularMovies(parameters: [String: Any]?) {
+        apiClient.request(endpoint: MovieEndpoint.fetchMovieByCategory(parameters))
+            .receive(on: DispatchQueue.main)
+            .sink { complition in
+                switch complition {
+                case .finished:
+                    print("getPopularMovies = OK")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { [weak self] (result: MovieBigModel) in
+                self?.mostPopularMovies = result
             }
             .store(in: &cancellables)
     }

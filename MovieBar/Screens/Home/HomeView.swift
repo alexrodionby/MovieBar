@@ -31,11 +31,15 @@ struct HomeView: View {
                         
                         CategoryLineView()
                         
-                        CategoryMenuView(selectedIndex: $homeVM.selectedCategoryIndex)
+                        CategoryMenuView(selectedIndex: $homeVM.selectedCategoryIndex) { index in
+                            homeVM.getMovieByOneCategory(index: index, parameters: QueryParameters.getMovieByCategory)
+                        }
                         
                         MovieByCategoryCollectionView(movies: homeVM.moviesByCategory ?? MovieBigModel())
+                        
+                        CategoryLineView(leftText: "Most popular")
                     }
-
+                    
                     
                     Spacer()
                 }
