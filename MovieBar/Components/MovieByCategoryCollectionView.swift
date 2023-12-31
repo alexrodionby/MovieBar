@@ -25,7 +25,7 @@ struct MovieByCategoryCollectionView: View {
         ScrollView(scrollViewAxis, showsIndicators: shshowScrollIndicators) {
             HStack(spacing: cellSpacing) {
                 ForEach(movies.docs ?? [], id: \.id) { movie in
-                    MovieVericalMainView(movieByCategory: movie)
+                    MovieVericalCellMainView(movieByCategory: movie)
                         .frame(width: cellWidth, height: cellHeight)
                 }
             }

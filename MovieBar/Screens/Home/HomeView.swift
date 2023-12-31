@@ -11,6 +11,9 @@ struct HomeView: View {
     
     @ObservedObject var homeVM: HomeViewModel
     var profileName: String = "Guest"
+    @State private var isSearchResultsVisible = false
+    @State private var goToMoviesByCategory = false
+    @State private var isInitialLoad = false
     
     var body: some View {
         NavigationView {
@@ -19,17 +22,21 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 VStack(spacing: 16) {
                     AvatarLineView(profileName: profileName)
+                    
                     SearchBarView() { searchText in
-                        print("Текст в родителе", searchText)
+                        homeVM.searchMovieByName(name: searchText)
+                        isSearchResultsVisible = true
                     }
-                    Button("GET") {
-                        homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
-                        homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
-                    }
+                    
                     ScrollView(.vertical, showsIndicators: false) {
-                        MovieCollectionView(collections: homeVM.movieCollections?.docs ?? [])
+                        MovieCollectionView(collections: homeVM.movieCollections?.docs ?? []) { slug in
+                            homeVM.searchMovieByCollection(slug: slug)
+                            goToMoviesByCategory = true
+                        }
                         
-                        CategoryLineView()
+                        CategoryLineView() {
+                            MovieListView(movies: homeVM.moviesByCategory?.docs, screenTitle: "Categories")
+                        }
                         
                         CategoryMenuView(selectedIndex: $homeVM.selectedCategoryIndex) { index in
                             homeVM.getMovieByOneCategory(index: index, parameters: QueryParameters.getMovieByCategory)
@@ -37,9 +44,36 @@ struct HomeView: View {
                         
                         MovieByCategoryCollectionView(movies: homeVM.moviesByCategory ?? MovieBigModel())
                         
-                        CategoryLineView(leftText: "Most popular")
+                        CategoryLineView(leftText: "Most popular") {
+                            MovieListView(movies: homeVM.mostPopularMovies?.docs, screenTitle: "Most popular")
+                        }
+                        
+                        MovieByCategoryCollectionView(movies: homeVM.mostPopularMovies ?? MovieBigModel())
+                    }
+                    .refreshable {
+                        print("Потянули чтобы обновить")
+                        homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
+                        homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
+                        homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)
                     }
                     
+                    if isSearchResultsVisible {
+                        NavigationLink(
+                            destination: MovieListView(movies: homeVM.searchMovieResult?.docs, screenTitle: "Search Result", scrollViewAxis: .vertical, shshowScrollIndicators: false),
+                            isActive: $isSearchResultsVisible
+                        ) {
+                            EmptyView()
+                        }
+                    }
+                    
+                    if goToMoviesByCategory {
+                        NavigationLink(
+                            destination: MovieListView(movies: homeVM.moviesByCollection?.docs, screenTitle: "Collection Movies", scrollViewAxis: .vertical, shshowScrollIndicators: false),
+                            isActive: $goToMoviesByCategory
+                        ) {
+                            EmptyView()
+                        }
+                    }
                     
                     Spacer()
                 }
@@ -47,6 +81,14 @@ struct HomeView: View {
             }
             .onTapGesture {
                 hideKeyboard()
+            }
+            .onAppear {
+                if !isInitialLoad {
+                    homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
+                    homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
+                    homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)
+                    isInitialLoad = true
+                }
             }
         }
     }

@@ -1,10 +1,19 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " " : {
+
+    },
+    "|" : {
+
+    },
     "⏐" : {
 
     },
     "ChristmasView" : {
+
+    },
+    "Detail" : {
 
     },
     "English" : {
@@ -30,9 +39,6 @@
         }
       }
     },
-    "GET" : {
-
-    },
     "Hello, " : {
       "localizations" : {
         "ru" : {
@@ -54,6 +60,9 @@
       }
     },
     "Language" : {
+
+    },
+    "minutes" : {
 
     },
     "movies" : {
@@ -103,6 +112,9 @@
       }
     },
     "SearchView" : {
+
+    },
+    "Trailer" : {
 
     }
   },

@@ -8,7 +8,7 @@
 import SwiftUI
 import Kingfisher
 
-struct MovieVericalMainView: View {
+struct MovieVericalCellMainView: View {
     
     var movieByCategory: MovieDetail
     
@@ -20,11 +20,16 @@ struct MovieVericalMainView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            KFImage(URL(string: movieByCategory.poster?.previewURL ?? ""))
-                .resizable()
-                .scaledToFill()
-                .frame(width: cellWidth, height: cellHeight - 50)
             
+            NavigationLink {
+                DetailMovieView(movie: movieByCategory)
+            } label: {
+                KFImage(URL(string: movieByCategory.poster?.previewURL ?? ""))
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: cellWidth, height: cellHeight - 50)
+            }
+
             VStack(alignment: .leading, spacing: 4) {
                 Text(movieByCategory.name ?? "No movie name")
                     .font(.custom(.semiBold, size: 14))
@@ -70,5 +75,5 @@ struct MovieVericalMainView: View {
 }
 
 #Preview {
-    MovieVericalMainView(movieByCategory: MovieDetail.init())
+    MovieVericalCellMainView(movieByCategory: MovieDetail.init())
 }

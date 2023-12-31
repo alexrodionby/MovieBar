@@ -20,8 +20,10 @@ class HomeViewModel: ObservableObject {
     @Published var movieCollections: MovieCollectionModel?
     @Published var moviesByCategory: MovieBigModel?
     @Published var mostPopularMovies: MovieBigModel?
+    @Published var searchMovieResult: MovieBigModel?
+    @Published var moviesByCollection: MovieBigModel?
     
-    @Published var searchText: String = ""
+    //@Published var searchText: String = ""
     @Published var selectedCategoryIndex = 0
     
     
@@ -82,6 +84,42 @@ class HomeViewModel: ObservableObject {
                 }
             } receiveValue: { [weak self] (result: MovieBigModel) in
                 self?.mostPopularMovies = result
+            }
+            .store(in: &cancellables)
+    }
+    
+    func searchMovieByName(name: String) {
+        var query = QueryParameters.searchMovieByName
+        query["query"] = name
+        apiClient.request(endpoint: MovieEndpoint.searchByMovieName(query))
+            .receive(on: DispatchQueue.main)
+            .sink { complition in
+                switch complition {
+                case .finished:
+                    print("searchMovieByName = OK")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { [weak self] (result: MovieBigModel) in
+                self?.searchMovieResult = result
+            }
+            .store(in: &cancellables)
+    }
+    
+    func searchMovieByCollection(slug: String) {
+        var query = QueryParameters.getMovieByCollection
+        query["lists"] = slug
+        apiClient.request(endpoint: MovieEndpoint.fetchMovieByCollection(query))
+            .receive(on: DispatchQueue.main)
+            .sink { complition in
+                switch complition {
+                case .finished:
+                    print("searchMovieByName = OK")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            } receiveValue: { [weak self] (result: MovieBigModel) in
+                self?.moviesByCollection = result
             }
             .store(in: &cancellables)
     }

@@ -11,6 +11,7 @@ import SwiftUI
 struct MovieBarApp: App {
     
     @StateObject private var languageManager = LanguageManager()
+    @StateObject private var tabbarManager = TabbarManager()
     
     var body: some Scene {
         WindowGroup {
@@ -18,6 +19,7 @@ struct MovieBarApp: App {
             //TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
                 .preferredColorScheme(.dark)
                 .environmentObject(languageManager)
+                .environmentObject(tabbarManager)
                 .environment(\.locale, .init(identifier: languageManager.currentLanguage))
         }
     }
