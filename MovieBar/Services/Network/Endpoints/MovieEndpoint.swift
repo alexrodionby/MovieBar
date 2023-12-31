@@ -10,6 +10,8 @@ import Foundation
 enum MovieEndpoint {
     case fetchMovieCollections([String: Any]?)
     case fetchMovieByCategory([String: Any]?)
+    case searchByMovieName([String: Any]?)
+    case fetchMovieByCollection([String: Any]?)
 }
 
 extension MovieEndpoint: APIEndpoint {
@@ -33,14 +35,16 @@ extension MovieEndpoint: APIEndpoint {
             return "/v1.4/list"
         case .fetchMovieByCategory:
             return "/v1.4/movie"
+        case .searchByMovieName:
+            return "/v1.4/movie/search"
+        case .fetchMovieByCollection:
+            return "/v1.4/movie"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .fetchMovieCollections:
-            return .get
-        case .fetchMovieByCategory:
+        default:
             return .get
         }
     }
@@ -50,6 +54,10 @@ extension MovieEndpoint: APIEndpoint {
         case .fetchMovieCollections(let parameters):
             return parameters
         case .fetchMovieByCategory(let parameters):
+            return parameters
+        case .searchByMovieName(let parameters):
+            return parameters
+        case .fetchMovieByCollection(let parameters):
             return parameters
         }
     }
@@ -70,18 +78,14 @@ extension MovieEndpoint: APIEndpoint {
     
     var contentType: ContentType? {
         switch self {
-        case .fetchMovieCollections:
-            return .json
-        case .fetchMovieByCategory:
+        default:
             return .json
         }
     }
     
     var acceptType: ContentType? {
         switch self {
-        case .fetchMovieCollections:
-            return .json
-        case .fetchMovieByCategory:
+        default:
             return .json
         }
     }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct SearchBarView: View {
     
+    @EnvironmentObject var tabbarManager: TabbarManager
     @State var searchText: String = ""
     let defaultSearchText = LocalizedStringKey("Search a title...")
     var searchTextSize: CGFloat = 14
@@ -40,11 +41,20 @@ struct SearchBarView: View {
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
                             searchText = ""
+                            hideKeyboard()
                         }
                     ,alignment: .trailing
                 )
                 .onSubmit {
                     searchAction?(searchText)
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { _ in
+                    /// Выполняем действия, когда клавиатура появляется
+                    tabbarManager.isTabbarVisible = false
+                }
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+                    /// Выполняем действия, когда клавиатура скрывается
+                    tabbarManager.isTabbarVisible = true
                 }
             
             Text("⏐")

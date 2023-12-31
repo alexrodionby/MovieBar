@@ -10,11 +10,13 @@ import SwiftUI
 struct TabbarView: View {
     
     @State private var tabSelection = 1
+    @EnvironmentObject var tabbarManager: TabbarManager
+    @StateObject private var homeVM = HomeViewModel(apiClient: HTTPClient())
     
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $tabSelection) {
-                HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()))
+                HomeView(homeVM: homeVM)
                     .tag(1)
                 SearchView()
                     .tag(2)
@@ -24,7 +26,9 @@ struct TabbarView: View {
                     .tag(4)
             }
             .overlay(alignment: .bottom) {
-                TabBottomView(geometry: geometry.size, tabSelection: $tabSelection)
+                if tabbarManager.isTabbarVisible {
+                    TabBottomView(geometry: geometry.size, tabSelection: $tabSelection)
+                }
             }
         }
     }

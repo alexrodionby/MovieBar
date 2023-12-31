@@ -77,19 +77,49 @@ struct QueryParameters {
 
 // MARK: - Query arrays
     
+    /*
+    https://api.kinopoisk.dev/v1.4/movie?page=1
+     &limit=10
+     &selectFields=id&selectFields=description&selectFields=type&selectFields=year&selectFields=ageRating&selectFields=movieLength&
+     notNullFields=type&notNullFields=year&notNullFields=ageRating&notNullFields=movieLength
+    */
+    
     /// Для запроса коллекций фильмов на главном экране
     static let getMovieCollections: [String: Any] = [
         "page": 1,
         "limit": 20,
         "selectFields": ["name", "category", "slug", "moviesCount", "cover"],
-        "notNullFields": ["name", "category", "slug", "moviesCount", "cover.url", "cover.previewUrl"]
+        "notNullFields": ["name", "category", "slug", "moviesCount", "cover.url"]
     ]
     
     /// Для запроса списка филмов по категории
     static let getMovieByCategory: [String: Any] = [
         "page": 1,
         "limit": 20,
-        "selectFields": ["id", "name", "enName", "rating", "genres", "poster"],
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
+        "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
+    ]
+    
+    /// Для запроса списка популярных филмов
+    static let getPopularMovie: [String: Any] = [
+        "page": 1,
+        "limit": 20,
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
+        "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"],
+        "rating.kp": "8.5-10"
+    ]
+    
+    /// Для поиска филмов по названию
+    static let searchMovieByName: [String: Any] = [
+        "page": 1,
+        "limit": 20
+    ]
+    
+    /// Для запроса списка фильмов по коллекции
+    static let getMovieByCollection: [String: Any] = [
+        "page": 1,
+        "limit": 20,
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
         "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
     ]
     
