@@ -9,15 +9,16 @@ import SwiftUI
 
 struct AvatarLineView: View {
     
-    var profileName: String = ""
+    var userProfile: UserProfileModel?
     var helloText = LocalizedStringKey("Hello, ")
+    @ObservedObject var wishListVM: WishlistViewModel
     
     var body: some View {
         HStack(spacing: 20) {
             AvatarCircleView(avatarFrameSize: 40, imageFrameSize: 24, backgroundColor: .custom.secondaryOrange, personImage: Image(.person), imagePersonColor: .custom.textWhite)
             HStack(spacing: 0) {
                 Text(helloText)
-                Text(profileName)
+                Text(userProfile?.name ?? "Guest")
             }
             .foregroundStyle(Color.custom.textWhite)
             .font(.custom(.semiBold, size: 16))
@@ -26,7 +27,7 @@ struct AvatarLineView: View {
             
             NavigationLink {
                 // Переход на экран избранных филмов
-                EmptyView()
+                WishListView(wishlistVM: wishListVM, screenTitle: "Wish List")
             } label: {
                 LikeHeartView(heartFrameCornerRadius: 12, heartFrameSize: 32, heartImageSize: 24, heartImageColor: .custom.secondaryRed, backgroundColor: .custom.primarySoft, heartImage: Image(.heart))
             }
@@ -35,5 +36,5 @@ struct AvatarLineView: View {
 }
 
 #Preview {
-    AvatarLineView()
+    AvatarLineView(wishListVM: WishlistViewModel())
 }

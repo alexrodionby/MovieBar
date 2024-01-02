@@ -23,7 +23,6 @@ class HomeViewModel: ObservableObject {
     @Published var searchMovieResult: MovieBigModel?
     @Published var moviesByCollection: MovieBigModel?
     
-    //@Published var searchText: String = ""
     @Published var selectedCategoryIndex = 0
     
     

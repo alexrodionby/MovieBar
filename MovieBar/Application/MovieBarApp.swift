@@ -16,7 +16,6 @@ struct MovieBarApp: App {
     var body: some Scene {
         WindowGroup {
             TabbarView()
-            //TestView(testViewModel: TestViewModel(apiClient: HTTPClient()))
                 .preferredColorScheme(.dark)
                 .environmentObject(languageManager)
                 .environmentObject(tabbarManager)

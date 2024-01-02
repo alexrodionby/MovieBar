@@ -10,10 +10,16 @@
     "⏐" : {
 
     },
+    "About Us" : {
+
+    },
     "ChristmasView" : {
 
     },
     "Detail" : {
+
+    },
+    "Edit Profile" : {
 
     },
     "English" : {
@@ -38,6 +44,9 @@
           }
         }
       }
+    },
+    "General" : {
+
     },
     "Hello, " : {
       "localizations" : {
@@ -65,6 +74,9 @@
     "minutes" : {
 
     },
+    "More" : {
+
+    },
     "movies" : {
       "localizations" : {
         "ru" : {
@@ -74,6 +86,12 @@
           }
         }
       }
+    },
+    "Notification" : {
+
+    },
+    "Privacy Policy" : {
+
     },
     "Profile" : {
       "localizations" : {
@@ -85,10 +103,10 @@
         }
       }
     },
-    "ProfileView" : {
+    "Russian" : {
 
     },
-    "Russian" : {
+    "Save Changes" : {
 
     },
     "Search" : {
