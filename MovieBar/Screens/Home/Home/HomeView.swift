@@ -10,7 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var homeVM: HomeViewModel
-    var profileName: String = "Guest"
+    @ObservedObject var wishListVM: WishlistViewModel
+    @State var userProfile: UserProfileModel?
     @State private var isSearchResultsVisible = false
     @State private var goToMoviesByCategory = false
     @State private var isInitialLoad = false
@@ -21,7 +22,7 @@ struct HomeView: View {
                 Color.custom.primaryDark
                     .ignoresSafeArea()
                 VStack(spacing: 16) {
-                    AvatarLineView(profileName: profileName)
+                    AvatarLineView(userProfile: userProfile, wishListVM: wishListVM)
                     
                     SearchBarView() { searchText in
                         homeVM.searchMovieByName(name: searchText)
@@ -83,6 +84,7 @@ struct HomeView: View {
                 hideKeyboard()
             }
             .onAppear {
+                userProfile = StorageService.shared.loadUserProfile(username: "currentUsername")
                 if !isInitialLoad {
                     homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
                     homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
@@ -95,5 +97,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()))
+    HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()), wishListVM: WishlistViewModel())
 }

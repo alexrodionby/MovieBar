@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryMenuView: View {
     
+    @EnvironmentObject var languageManager: LanguageManager
     @Binding var selectedIndex: Int
     var selectAction: ((Int) -> Void)?
     
@@ -22,6 +23,9 @@ struct CategoryMenuView: View {
                     }
                 }
             }
+        }
+        .onAppear {
+            languageManager.updateCategoryArray()
         }
     }
 }

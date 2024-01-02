@@ -20,7 +20,7 @@ class LanguageManager: ObservableObject {
         updateCategoryArray()
     }
     
-    private func updateCategoryArray() {
+    func updateCategoryArray() {
         if currentLanguage == "ru" {
             QueryParameters.category = QueryParameters.categoryRU
         } else {

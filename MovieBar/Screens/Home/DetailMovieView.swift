@@ -93,13 +93,15 @@ struct DetailMovieView: View {
                         .ignoresSafeArea(edges: .top)
                 }
                 
-                
-                
-                
-                
                 Spacer()
             }
         }
+        .navigationBarItems(trailing: Button(action: {
+            print("Нажали на Добавить в избранное")
+            StorageService.shared.saveToWishList(movie: movie)
+        }) {
+            LikeHeartView()
+        })
         .navigationTitle("Detail")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
