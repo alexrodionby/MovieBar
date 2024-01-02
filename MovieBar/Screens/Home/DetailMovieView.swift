@@ -96,6 +96,9 @@ struct DetailMovieView: View {
                 Spacer()
             }
         }
+        .onAppear {
+            StorageService.shared.saveToRecentList(movie: movie)
+        }
         .navigationBarItems(trailing: Button(action: {
             print("Нажали на Добавить в избранное")
             StorageService.shared.saveToWishList(movie: movie)

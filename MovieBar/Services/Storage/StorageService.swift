@@ -21,6 +21,26 @@ final class StorageService {
     
     // MARK: - public methods for saving / loading
     
+    func saveToRecentList(movie: MovieDetail) {
+        var movies: [MovieDetail] = load(key: "recent") ?? []
+        if movies.firstIndex(where: { $0.id == movie.id }) == nil {
+            movies.append(movie)
+            save(movies, key: "recent")
+        }
+    }
+
+    
+    func loadRecent() -> [MovieDetail] {
+        guard let data = UserDefaults.standard.data(forKey: "recent") else { return [] }
+        do {
+            let movies = try JSONDecoder().decode([MovieDetail].self, from: data)
+            return movies
+        } catch {
+            print("movies loading failed: \(error)")
+            return []
+        }
+    }
+    
     func saveToWishList(movie: MovieDetail) {
         var movies: [MovieDetail] = load(key: "wishlist") ?? []
         movies.append(movie)
