@@ -14,13 +14,14 @@ struct TabbarView: View {
     @StateObject private var homeVM = HomeViewModel(apiClient: HTTPClient())
     @StateObject private var wishListVM = WishlistViewModel()
     @StateObject private var profileVM = ProfileViewModel()
+    @StateObject private var searchVM = SearchViewModel(apiClient: HTTPClient())
     
     var body: some View {
         GeometryReader { geometry in
             TabView(selection: $tabSelection) {
                 HomeView(homeVM: homeVM, wishListVM: wishListVM)
                     .tag(1)
-                SearchView()
+                SearchView(searchVM: searchVM)
                     .tag(2)
                 ChristmasView()
                     .tag(3)

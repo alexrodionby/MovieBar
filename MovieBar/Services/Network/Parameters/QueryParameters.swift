@@ -123,4 +123,12 @@ struct QueryParameters {
         "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
     ]
     
+    /// Для запроса списка снимающихся фильмов
+    static let getFilmingMovie: [String: Any] = [
+        "page": 1,
+        "limit": 20,
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
+        "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
+    ]
+    
 }
