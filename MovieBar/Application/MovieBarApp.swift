@@ -20,6 +20,9 @@ struct MovieBarApp: App {
                 .environmentObject(languageManager)
                 .environmentObject(tabbarManager)
                 .environment(\.locale, .init(identifier: languageManager.currentLanguage))
+                .onAppear {
+                    NotificationManager.shared.requestAuthorization()
+                }
         }
     }
 }

@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     " " : {
 
     },
@@ -11,6 +14,9 @@
 
     },
     "About Us" : {
+
+    },
+    "After" : {
 
     },
     "ChristmasView" : {
@@ -128,6 +134,12 @@
           }
         }
       }
+    },
+    "Sec: %lld" : {
+
+    },
+    "Show Notifications" : {
+
     },
     "Trailer" : {
 
