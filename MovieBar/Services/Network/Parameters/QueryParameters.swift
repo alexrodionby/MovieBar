@@ -77,13 +77,6 @@ struct QueryParameters {
 
 // MARK: - Query arrays
     
-    /*
-    https://api.kinopoisk.dev/v1.4/movie?page=1
-     &limit=10
-     &selectFields=id&selectFields=description&selectFields=type&selectFields=year&selectFields=ageRating&selectFields=movieLength&
-     notNullFields=type&notNullFields=year&notNullFields=ageRating&notNullFields=movieLength
-    */
-    
     /// Для запроса коллекций фильмов на главном экране
     static let getMovieCollections: [String: Any] = [
         "page": 1,

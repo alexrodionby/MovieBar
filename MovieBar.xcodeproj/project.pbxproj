@@ -34,6 +34,7 @@
 		A130802A2B387F0400188A9B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13080292B387F0400188A9B /* HomeViewModel.swift */; };
 		A130802C2B388A1500188A9B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A130802B2B388A1500188A9B /* View+Ext.swift */; };
 		A13AA18F2B4450D0000951E4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA18E2B4450D0000951E4 /* SearchViewModel.swift */; };
+		A13AA1922B44A969000951E4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1912B44A969000951E4 /* NotificationManager.swift */; };
 		A1AE47032B36FFC400254CB6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */; };
 		A1AE47042B36FFC400254CB6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */; };
 		A1AE47052B36FFC400254CB6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */; };
@@ -110,6 +111,7 @@
 		A13080292B387F0400188A9B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A130802B2B388A1500188A9B /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		A13AA18E2B4450D0000951E4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		A13AA1912B44A969000951E4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				A130801C2B37220100188A9B /* Storage */,
 				A130801F2B37246400188A9B /* Language */,
 				A1DE92182B3DBD3000779B9C /* Tabbar */,
+				A13AA1902B44A93D000951E4 /* Notification */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -327,6 +330,14 @@
 				A1DE92432B4338BC00779B9C /* PillTextField.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		A13AA1902B44A93D000951E4 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				A13AA1912B44A969000951E4 /* NotificationManager.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		A1AE46F92B36FF9700254CB6 /* Fonts */ = {
@@ -579,6 +590,7 @@
 				A1DE922F2B42C59D00779B9C /* WishlistViewModel.swift in Sources */,
 				A1DE92172B3B151E00779B9C /* MovieByCategoryCollectionView.swift in Sources */,
 				A10D69632B34963D00100C19 /* ChristmasView.swift in Sources */,
+				A13AA1922B44A969000951E4 /* NotificationManager.swift in Sources */,
 				A10D69572B33511100100C19 /* MovieCollectionModel.swift in Sources */,
 				A1DE920B2B39BBBC00779B9C /* CategoryLineView.swift in Sources */,
 				A1DE923E2B4309A700779B9C /* AboutUsView.swift in Sources */,

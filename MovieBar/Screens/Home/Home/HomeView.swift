@@ -85,12 +85,12 @@ struct HomeView: View {
             }
             .onAppear {
                 userProfile = StorageService.shared.loadUserProfile(username: "currentUsername")
-                if !isInitialLoad {
-                    homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
-                    homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
-                    homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)
-                    isInitialLoad = true
-                }
+//                if !isInitialLoad {
+//                    homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
+//                    homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
+//                    homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)
+//                    isInitialLoad = true
+//                }
             }
         }
     }

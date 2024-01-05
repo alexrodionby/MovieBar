@@ -33,6 +33,10 @@ struct TabbarView: View {
                     TabBottomView(geometry: geometry.size, tabSelection: $tabSelection)
                 }
             }
+            .onAppear {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+                NotificationManager.shared.removeNotification()
+            }
         }
     }
 }
