@@ -96,6 +96,6 @@ struct HomeView: View {
     }
 }
 
-#Preview {
-    HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()), wishListVM: WishlistViewModel())
-}
+//#Preview {
+//    HomeView(homeVM: HomeViewModel(apiClient: HTTPClient()), wishListVM: WishlistViewModel())
+//}

@@ -15,6 +15,7 @@ struct MovieBarApp: App {
     
     var body: some Scene {
         WindowGroup {
+            // OnboardingMainView()
             TabbarView()
                 .preferredColorScheme(.dark)
                 .environmentObject(languageManager)
