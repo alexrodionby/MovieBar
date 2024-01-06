@@ -35,6 +35,9 @@
 		A130802C2B388A1500188A9B /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A130802B2B388A1500188A9B /* View+Ext.swift */; };
 		A13AA18F2B4450D0000951E4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA18E2B4450D0000951E4 /* SearchViewModel.swift */; };
 		A13AA1922B44A969000951E4 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1912B44A969000951E4 /* NotificationManager.swift */; };
+		A13AA1952B485F11000951E4 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1942B485F11000951E4 /* OnboardView.swift */; };
+		A13AA1972B485FBF000951E4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1962B485FBF000951E4 /* OnboardingMainView.swift */; };
+		A13AA1992B4865F9000951E4 /* OnboardingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */; };
 		A1AE47032B36FFC400254CB6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */; };
 		A1AE47042B36FFC400254CB6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */; };
 		A1AE47052B36FFC400254CB6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */; };
@@ -112,6 +115,9 @@
 		A130802B2B388A1500188A9B /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		A13AA18E2B4450D0000951E4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		A13AA1912B44A969000951E4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		A13AA1942B485F11000951E4 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
+		A13AA1962B485FBF000951E4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
+		A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBoard.swift; sourceTree = "<group>"; };
 		A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -340,6 +346,16 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		A13AA1932B485EDF000951E4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A13AA1962B485FBF000951E4 /* OnboardingMainView.swift */,
+				A13AA1942B485F11000951E4 /* OnboardView.swift */,
+				A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A1AE46F92B36FF9700254CB6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +457,7 @@
 		A1F745CB2B3081EC00006699 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				A13AA1932B485EDF000951E4 /* Onboarding */,
 				A1F745CD2B30822800006699 /* Tabbar */,
 				A10D69582B3491A000100C19 /* Home */,
 				A10D69592B3491AB00100C19 /* Search */,
@@ -560,6 +577,7 @@
 				A130802C2B388A1500188A9B /* View+Ext.swift in Sources */,
 				A1DE92242B3F019F00779B9C /* DetailMovieView.swift in Sources */,
 				A1DE92152B3AFA1E00779B9C /* MovieBigModel.swift in Sources */,
+				A13AA1972B485FBF000951E4 /* OnboardingMainView.swift in Sources */,
 				A1DE921E2B3DD36600779B9C /* MovieListView.swift in Sources */,
 				A1DE92222B3E037C00779B9C /* CustomBackButton.swift in Sources */,
 				A13AA18F2B4450D0000951E4 /* SearchViewModel.swift in Sources */,
@@ -582,6 +600,7 @@
 				A1DE92202B3DF64B00779B9C /* AgeRatingView.swift in Sources */,
 				A1AE470E2B37025D00254CB6 /* Font+Ext.swift in Sources */,
 				A130802A2B387F0400188A9B /* HomeViewModel.swift in Sources */,
+				A13AA1992B4865F9000951E4 /* OnboardingBoard.swift in Sources */,
 				A13080212B37248600188A9B /* LanguageManager.swift in Sources */,
 				A1DE920F2B39DB7400779B9C /* CategoryMenuView.swift in Sources */,
 				A1DE92282B3F140900779B9C /* ShareButtonView.swift in Sources */,
@@ -608,6 +627,7 @@
 				A1DE92262B3F0F2000779B9C /* TrailerButtonView.swift in Sources */,
 				A10D695F2B34962400100C19 /* HomeView.swift in Sources */,
 				A1DE92342B42FA3400779B9C /* UserProfileModel.swift in Sources */,
+				A13AA1952B485F11000951E4 /* OnboardView.swift in Sources */,
 				A1DE92092B39B72E00779B9C /* MovieCollectionView.swift in Sources */,
 				A1DE923A2B43078B00779B9C /* LanguageView.swift in Sources */,
 				A13080282B386E4300188A9B /* SearchBarView.swift in Sources */,
