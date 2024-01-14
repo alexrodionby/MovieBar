@@ -1,3 +1,3 @@
 # MovieBar
 An application for searching and watching movies.
-![screenshots]([https://github.com/michaelbolgar/Rainbow-App/assets/119865051/7ffd7ec4-457b-4a6b-879e-856186ce15e2](https://github.com/alexrodionby/MovieBar/tree/develop/MovieBar/Resources/Assets.xcassets/Readme)https://github.com/alexrodionby/MovieBar/tree/develop/MovieBar/Resources/Assets.xcassets/Readme)
+![screenshots](https://github.com/alexrodionby/MovieBar/blob/develop/MovieBar/Resources/Assets.xcassets/Readme/1.imageset/Снимок%20экрана%202024-01-14%20в%2012.11.12.png)
