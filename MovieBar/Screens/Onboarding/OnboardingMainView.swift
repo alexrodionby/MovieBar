@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingMainView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    
+    @ObservedObject var homeVM: HomeViewModel
     @State private var currentPage: Int = 0
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
     
@@ -41,6 +41,9 @@ struct OnboardingMainView: View {
                             hasSeenOnboarding.toggle()
                             print("hasSeenOnboarding=", hasSeenOnboarding)
                             presentationMode.wrappedValue.dismiss()
+                            homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
+                            homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
+                            homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)
                         } else {
                             currentPage = min(currentPage + 1, intros.count - 1)
                             print("currentPage=", currentPage)
@@ -93,5 +96,5 @@ struct OnboardingMainView: View {
 }
 
 #Preview {
-    OnboardingMainView()
+    OnboardingMainView(homeVM: HomeViewModel(apiClient: HTTPClient()))
 }
