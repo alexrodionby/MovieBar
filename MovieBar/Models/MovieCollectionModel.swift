@@ -13,19 +13,12 @@ struct MovieCollectionModel: Codable {
     var total, limit, page, pages: Int?
 }
 
-// MARK: - MovieCollection
+// MARK: - Doc
 struct MovieCollection: Codable {
-    var category: Category?
-    var name, slug: String?
+    var category, name, slug, createdAt: String?
+    var updatedAt, id: String?
     var moviesCount: Int?
     var cover: Cover?
-    var id: String?
-}
-
-enum Category: String, Codable {
-    case премии = "Премии"
-    case сериалы = "Сериалы"
-    case фильмы = "Фильмы"
 }
 
 // MARK: - Cover

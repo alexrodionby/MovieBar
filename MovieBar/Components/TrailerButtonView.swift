@@ -9,20 +9,18 @@ import SwiftUI
 
 struct TrailerButtonView: View {
     
-    
+    var labelTrailerText: LocalizedStringKey = LocalizedStringKey("Trailer")
     var trailerButtonCornerRadius: CGFloat = 32
     var backgroundColor: Color = .custom.secondaryOrange
     var trailerButtonHeigth: CGFloat = 50
     var trailerButtonImage: Image = Image(.film)
     var trailerButtonImageSize: CGFloat = 24
     var trailerButtonColor: Color = .custom.textWhite
-    
-    
+    var tapTrailerAction: (() -> Void)?
     
     var body: some View {
-        
         Button(action: {
-            print("Нажали трейлер")
+            tapTrailerAction?()
         }, label: {
             RoundedRectangle(cornerRadius: trailerButtonCornerRadius, style: .continuous)
                 .fill(backgroundColor)
@@ -32,7 +30,7 @@ struct TrailerButtonView: View {
                         trailerButtonImage
                             .resizable()
                             .frame(width: trailerButtonImageSize, height: trailerButtonImageSize)
-                        Text("Trailer")
+                        Text(labelTrailerText)
                             .font(.custom(.semiBold, size: 16))
                     }
                         .foregroundColor(trailerButtonColor)

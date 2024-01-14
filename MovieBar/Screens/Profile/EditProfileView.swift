@@ -23,18 +23,38 @@ struct EditProfileView: View {
                 
                 VStack(spacing: 16) {
                     AvatarCircleView(avatarFrameSize: 100, imageFrameSize: 100)
-                    Text(user?.name ?? "Guest")
-                        .font(.custom(.semiBold, size: 16))
-                        .foregroundStyle(Color.custom.textWhite)
+                    if user?.name != nil {
+                        Text(user!.name)
+                            .font(.custom(.semiBold, size: 16))
+                            .foregroundStyle(Color.custom.textWhite)
+                    } else {
+                        Text(LocalizedStringKey("Guest"))
+                            .font(.custom(.semiBold, size: 16))
+                            .foregroundStyle(Color.custom.textWhite)
+                    }
                     
-                    Text(user?.email ?? "No email")
-                        .font(.custom(.semiBold, size: 14))
-                        .foregroundStyle(Color.custom.textGray)
+                    if user?.email != nil {
+                        Text(user!.email)
+                            .font(.custom(.semiBold, size: 14))
+                            .foregroundStyle(Color.custom.textGray)
+                    } else {
+                        Text(LocalizedStringKey("No email"))
+                            .font(.custom(.semiBold, size: 14))
+                            .foregroundStyle(Color.custom.textGray)
+                    }
                 }
                 .padding(.bottom, 32)
+                if user?.name != nil {
+                    PillTextField(inputText: $inputName, placeholder: LocalizedStringKey(user!.name))
+                } else {
+                    PillTextField(inputText: $inputName)
+                }
                 
-                PillTextField(inputText: $inputName, placeholder: user?.name ?? "Guest", title: "Full Name", warning: "Wrong Name")
-                PillTextField(inputText: $inputEmail, placeholder: user?.email ?? "No Email", title: "Email", warning: "Wrong Email")
+                if user?.email != nil {
+                    PillTextField(inputText: $inputName, placeholder: LocalizedStringKey(user!.email))
+                } else {
+                    PillTextField(inputText: $inputEmail, placeholder: LocalizedStringKey("No Email"), title: LocalizedStringKey("Email"))
+                }
                 
                 Spacer()
                 
@@ -44,7 +64,7 @@ struct EditProfileView: View {
                 }, label: {
                     RoundedRectangle(cornerRadius: 32)
                         .fill(Color.custom.primaryBlueAccent)
-                        .frame(width: 200, height: 50)
+                        .frame(width: 250, height: 50)
                         .overlay(
                             Text("Save Changes")
                                 .font(.custom(.semiBold, size: 16))
@@ -52,7 +72,7 @@ struct EditProfileView: View {
                         )
                 })
                 .padding(.bottom)
-
+                
                 
             }
             .padding()

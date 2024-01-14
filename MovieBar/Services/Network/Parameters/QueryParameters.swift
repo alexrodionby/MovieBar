@@ -55,6 +55,39 @@ struct QueryParameters {
         ["церемония", "ceremoniya"]
     ]
     
+    static let newYearMovies = [
+        "Один дома",
+        "Крепкий орешек",
+        "Как Гринч украл Рождество",
+        "Полярный экспресс",
+        "Гарри Поттер и философский камень",
+        "Ледниковый период. Праздничное шоу",
+        "Новогодний кураж",
+        "Гарольд и Кумар: Праздничный выпуск",
+        "Тайна Рождества",
+        "Холодное сердце",
+        "Эльф",
+        "Кролик Питер: Новогодний хаос",
+        "День святого Валентина",
+        "Подарок с характером",
+        "Семь жизней",
+        "Загадочное происшествие в стиле агати кристи",
+        "Мадагаскар 2: Побег из Африки",
+        "Трое в лодке, не считая собаки",
+        "Санта Клаус",
+        "Гарри Поттер и узник Азкабана",
+        "Спасти рождество",
+        "Полярные приключения",
+        "Алиса в Зазеркалье",
+        "Шрек навсегда",
+        "Тайна коко",
+        "Моя девушка – зомби",
+        "Ночь в музее",
+        "Жизнь прекрасна",
+        "Тайные материалы",
+        "Дом, который построил Джек"
+    ]
+
     static let categoryForQuery = [
         "аниме", "биография", "боевик", "вестерн", "военный", "детектив",
         "детский", "для взрослых", "документальный", "драма", "игра", "история",
@@ -89,7 +122,7 @@ struct QueryParameters {
     static let getMovieByCategory: [String: Any] = [
         "page": 1,
         "limit": 20,
-        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
+        "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength", "videos"],
         "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"]
     ]
     
@@ -99,7 +132,7 @@ struct QueryParameters {
         "limit": 20,
         "selectFields": ["id", "name", "enName", "rating", "genres", "poster", "description", "year", "ageRating", "type", "movieLength"],
         "notNullFields": ["id", "name", "enName", "rating.kp", "genres.name", "poster.url"],
-        "rating.kp": "8.5-10"
+        "rating.imdb": "8-10"
     ]
     
     /// Для поиска филмов по названию

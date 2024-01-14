@@ -34,6 +34,7 @@ struct MovieListView: View {
         .navigationTitle(screenTitle)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

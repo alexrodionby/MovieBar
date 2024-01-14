@@ -15,6 +15,7 @@ struct TabbarView: View {
     @StateObject private var wishListVM = WishlistViewModel()
     @StateObject private var profileVM = ProfileViewModel()
     @StateObject private var searchVM = SearchViewModel(apiClient: HTTPClient())
+    @StateObject private var christmasVM = ChristmasViewModel(apiClient: HTTPClient())
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding = false
     
     var body: some View {
@@ -30,7 +31,7 @@ struct TabbarView: View {
                     .onAppear {
                         print("SearchView on appear")
                     }
-                ChristmasView()
+                ChristmasView(christmasVM: christmasVM)
                     .tag(3)
                     .onAppear {
                         print("ChristmasView on appear")

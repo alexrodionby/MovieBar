@@ -18,7 +18,7 @@ class HomeViewModel: ObservableObject {
     }
     
     @Published var movieCollections: MovieCollectionModel?
-    @Published var moviesByCategory: MovieBigModel?
+    @Published var moviesByCategory: MovieBigModel? = nil
     @Published var mostPopularMovies: MovieBigModel?
     @Published var searchMovieResult: MovieBigModel?
     @Published var moviesByCollection: MovieBigModel?

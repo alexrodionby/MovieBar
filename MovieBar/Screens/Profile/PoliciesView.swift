@@ -58,7 +58,7 @@ struct PoliciesView: View {
                 Spacer()
             }
         }
-        .navigationTitle("Privacy Policy")
+        .navigationTitle(LocalizedStringKey("Privacy Policy"))
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
     }

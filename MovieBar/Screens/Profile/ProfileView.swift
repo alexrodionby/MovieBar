@@ -10,6 +10,8 @@ import SwiftUI
 struct ProfileView: View {
     
     @ObservedObject var profileVM: ProfileViewModel
+    @EnvironmentObject var languageManager: LanguageManager
+    @State var screenTitle: String = String(describing: LocalizedStringKey("Profile"))
     
     var body: some View {
         NavigationView {
@@ -25,7 +27,7 @@ struct ProfileView: View {
                     }
                     
                     VStack(alignment: .leading) {
-                        Text("General")
+                        Text(LocalizedStringKey("General"))
                             .font(.custom(.semiBold, size: 18))
                             .foregroundStyle(Color.custom.textWhite)
                             .lineLimit(1)
@@ -50,7 +52,7 @@ struct ProfileView: View {
                         NavigationLink {
                             LanguageView()
                         } label: {
-                            ProfileMenuLineView(leftImage: Image(.globe), lineText: "Language")
+                            ProfileMenuLineView(leftImage: Image(.globe), lineText: LocalizedStringKey("Language"))
                                 .padding()
                         }
                     }
@@ -61,7 +63,7 @@ struct ProfileView: View {
                     )
                     
                     VStack(alignment: .leading) {
-                        Text("More")
+                        Text(LocalizedStringKey("More"))
                             .font(.custom(.semiBold, size: 18))
                             .foregroundStyle(Color.custom.textWhite)
                             .lineLimit(1)
@@ -74,7 +76,7 @@ struct ProfileView: View {
                         NavigationLink {
                             PoliciesView()
                         } label: {
-                            ProfileMenuLineView(leftImage: Image(.shield), lineText: "Legal and Policies")
+                            ProfileMenuLineView(leftImage: Image(.shield), lineText: LocalizedStringKey("Legal and Policies"))
                                 .padding()
                         }
 
@@ -84,7 +86,7 @@ struct ProfileView: View {
                         NavigationLink {
                            AboutUsView()
                         } label: {
-                            ProfileMenuLineView(leftImage: Image(.alert), lineText: "About Us")
+                            ProfileMenuLineView(leftImage: Image(.alert), lineText: LocalizedStringKey("About Us"))
                                 .padding()
                         }
 
@@ -101,7 +103,14 @@ struct ProfileView: View {
                 }
                 .padding()
             }
-            .navigationTitle("Profile")
+            .onAppear {
+                if languageManager.currentLanguage == "ru" {
+                    screenTitle = "Профиль"
+                } else {
+                    screenTitle = "Profile"
+                }
+            }
+            .navigationTitle(screenTitle)
             .navigationBarTitleDisplayMode(.inline)
         }
     }

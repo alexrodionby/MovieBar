@@ -10,6 +10,7 @@ import SwiftUI
 struct LanguageView: View {
     
     @EnvironmentObject var languageManager: LanguageManager
+    @State var screenTitle: String?
     
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct LanguageView: View {
             
             VStack {
                 VStack(alignment: .leading) {
-                    Text("Language")
+                    Text(LocalizedStringKey("Language"))
                         .font(.custom(.semiBold, size: 18))
                         .foregroundStyle(Color.custom.textWhite)
                         .lineLimit(1)
@@ -33,6 +34,7 @@ struct LanguageView: View {
                     Button {
                         print("выбрали английский")
                         languageManager.currentLanguage = "en"
+                        screenTitle = "Language"
                     } label: {
                         ProfileMenuLineView(
                             leftImage: Image(.flag),
@@ -50,6 +52,7 @@ struct LanguageView: View {
                     Button {
                         print("выбрали русский")
                         languageManager.currentLanguage = "ru"
+                        screenTitle = "Язык"
                     } label: {
                         ProfileMenuLineView(
                             leftImage: Image(.flag),
@@ -71,7 +74,14 @@ struct LanguageView: View {
                 Spacer()
             }
         }
-        .navigationTitle("Language")
+        .onAppear {
+            if languageManager.currentLanguage == "ru" {
+                screenTitle = "Язык"
+            } else {
+                screenTitle = "Language"
+            }
+        }
+        .navigationTitle(screenTitle ?? "Language")
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
     }

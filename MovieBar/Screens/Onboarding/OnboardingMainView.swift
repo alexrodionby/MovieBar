@@ -9,6 +9,8 @@ import SwiftUI
 
 struct OnboardingMainView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var currentPage: Int = 0
     @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
     
@@ -32,9 +34,13 @@ struct OnboardingMainView: View {
             .overlay (
                 Button(action: {
                     withAnimation {
-                        if currentPage + 1 == intros.count {
+                        if currentPage == intros.count - 1 {
+                            print("currentPage=", currentPage)
+                            print("intros.count=", intros.count)
                             print("Переходим на главный экран")
                             hasSeenOnboarding.toggle()
+                            print("hasSeenOnboarding=", hasSeenOnboarding)
+                            presentationMode.wrappedValue.dismiss()
                         } else {
                             currentPage = min(currentPage + 1, intros.count - 1)
                             print("currentPage=", currentPage)

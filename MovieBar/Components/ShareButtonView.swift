@@ -15,10 +15,11 @@ struct ShareButtonView: View {
     var shareButtonColor: Color = .custom.primaryBlueAccent
     var backgroundColor: Color = .custom.primarySoft
     var shareButtonImage: Image = Image(.share)
+    var tapShareAction: (() -> Void)?
     
     var body: some View {
         Button(action: {
-            print("Нажали поделиться")
+            tapShareAction?()
         }, label: {
             RoundedRectangle(cornerRadius: shareButtonCornerRadius, style: .continuous)
                 .fill(backgroundColor)
