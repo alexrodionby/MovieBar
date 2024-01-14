@@ -15,6 +15,7 @@ struct HomeView: View {
     @State private var isSearchResultsVisible = false
     @State private var goToMoviesByCategory = false
     @State private var isInitialLoad = false
+    @AppStorage("hasSeenOnboarding") private var hasSeenOnboarding: Bool = false
     
     var body: some View {
         NavigationView {
@@ -85,7 +86,7 @@ struct HomeView: View {
             }
             .onAppear {
                 userProfile = StorageService.shared.loadUserProfile(username: "currentUsername")
-                if !isInitialLoad {
+                if !isInitialLoad && hasSeenOnboarding {
                     homeVM.getMovieCollections(parameters: QueryParameters.getMovieCollections)
                     homeVM.getMovieByCategory(parameters: QueryParameters.getMovieByCategory)
                     homeVM.getPopularMovies(parameters: QueryParameters.getPopularMovie)

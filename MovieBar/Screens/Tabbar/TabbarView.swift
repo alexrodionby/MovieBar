@@ -52,7 +52,7 @@ struct TabbarView: View {
                 NotificationManager.shared.removeNotification()
             }
             .fullScreenCover(isPresented: .constant(!hasSeenOnboarding), content: {
-                OnboardingMainView()
+                OnboardingMainView(homeVM: homeVM)
             })
         }
     }
