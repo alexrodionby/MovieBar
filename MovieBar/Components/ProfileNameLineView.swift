@@ -25,21 +25,41 @@ struct ProfileNameLineView: View {
             }
             
             VStack {
-                Text(profile?.name ?? "Guest")
-                    .font(.custom(.semiBold, size: 16))
-                    .foregroundStyle(Color.custom.textWhite)
-                    .lineLimit(1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.leading)
-                    .truncationMode(.tail)
-              
-                Text(profile?.email ?? "No email")
-                    .font(.custom(.semiBold, size: 14))
-                    .foregroundStyle(Color.custom.textGray)
-                    .lineLimit(1)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .multilineTextAlignment(.leading)
-                    .truncationMode(.tail)
+                if profile?.name != nil {
+                    Text(profile!.name)
+                        .font(.custom(.semiBold, size: 16))
+                        .foregroundStyle(Color.custom.textWhite)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                        .truncationMode(.tail)
+                } else {
+                    Text(LocalizedStringKey("Guest"))
+                        .font(.custom(.semiBold, size: 16))
+                        .foregroundStyle(Color.custom.textWhite)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                        .truncationMode(.tail)
+                }
+
+                if profile?.email != nil {
+                    Text(profile!.email)
+                        .font(.custom(.semiBold, size: 14))
+                        .foregroundStyle(Color.custom.textGray)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                        .truncationMode(.tail)
+                } else {
+                    Text(LocalizedStringKey("No email"))
+                        .font(.custom(.semiBold, size: 14))
+                        .foregroundStyle(Color.custom.textGray)
+                        .lineLimit(1)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .multilineTextAlignment(.leading)
+                        .truncationMode(.tail)
+                }
             }
             
             Spacer()

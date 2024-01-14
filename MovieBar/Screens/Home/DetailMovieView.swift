@@ -16,6 +16,8 @@ struct DetailMovieView: View {
     var cellHeight: CGFloat = 230
     var cellCornerRadius: CGFloat = 16
     var textPadding: CGFloat = 8
+    @State private var goToTrailerView = false
+    @State private var goToFullMovie = false
     
     init(movie: MovieDetail) {
         self.movie = movie
@@ -78,11 +80,53 @@ struct DetailMovieView: View {
                     )
                     .padding(8)
                     
-                    HStack(spacing: 48) {
-                        TrailerButtonView()
-                        ShareButtonView()
+                    HStack(spacing: 16) {
+                        TrailerButtonView() {
+                            print("Нажали трейлер")
+                            goToTrailerView = true
+                        }
+                        ShareButtonView() {
+                            print("Нажали поделиться")
+                            ShareId(infoString: String(movie.videos?.trailers?.first?.url ?? "No link"))
+                        }
+                        
+                        
+                        NavigationLink {
+                            FullMovieView(movie: movie)
+                        } label: {
+                            RoundedRectangle(cornerRadius: 32, style: .continuous)
+                                .fill(Color.custom.primaryBlueAccent)
+                                .frame(width: 50 * 2.5, height: 50)
+                                .overlay(
+                                    HStack {
+                                        Image(.film)
+                                            .resizable()
+                                            .frame(width: 24, height: 24)
+                                        Text("Full")
+                                            .font(.custom(.semiBold, size: 16))
+                                    }
+                                        .foregroundColor(.custom.textWhite)
+                                )
+                        }
+
                     }
+                    .padding(.horizontal)
                     
+                    VStack(spacing: 8) {
+                        Text("Discription")
+                            .font(.custom(.semiBold, size: 16))
+                            .foregroundStyle(Color.custom.textWhite)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        ScrollView(.vertical, showsIndicators: false) {
+                            Text(movie.description ?? "No discription")
+                                .font(.custom(.medium, size: 14))
+                                .foregroundStyle(Color.custom.textWhiteGray)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                    }
+                    .padding(.horizontal)
                 }
                 .background {
                     KFImage(URL(string: movie.poster?.url ?? ""))
@@ -90,7 +134,16 @@ struct DetailMovieView: View {
                         .scaledToFill()
                         .opacity(0.1)
                         .blur(radius: 1.0)
-                        .ignoresSafeArea(edges: .top)
+                        .ignoresSafeArea()
+                }
+                
+                if goToTrailerView {
+                    NavigationLink(
+                        destination: TrailerMainView(movie: movie),
+                        isActive: $goToTrailerView
+                    ) {
+                        EmptyView()
+                    }
                 }
                 
                 Spacer()
@@ -109,6 +162,15 @@ struct DetailMovieView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: CustomBackButton())
     }
+    
+    func ShareId(infoString: String) {
+        let info = infoString
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            let av = UIActivityViewController(activityItems: [info], applicationActivities: nil)
+            windowScene.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 #Preview {

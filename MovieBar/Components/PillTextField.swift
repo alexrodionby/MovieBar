@@ -10,9 +10,9 @@ import SwiftUI
 struct PillTextField: View {
     
     @Binding var inputText: String
-    var placeholder: String = ""
-    var title: String = "Full Name"
-    var warning: String = "Wrong!"
+    var placeholder: LocalizedStringKey = LocalizedStringKey("Guest")
+    var title: LocalizedStringKey = LocalizedStringKey("Full Name")
+    var warning: LocalizedStringKey = LocalizedStringKey("Wrong!")
     var borderColor: Color = .custom.primarySoft
     var textFieldCornerRadius: CGFloat = 24
     

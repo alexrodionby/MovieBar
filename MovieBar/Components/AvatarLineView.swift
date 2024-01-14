@@ -18,7 +18,11 @@ struct AvatarLineView: View {
             AvatarCircleView(avatarFrameSize: 40, imageFrameSize: 24, backgroundColor: .custom.secondaryOrange, personImage: Image(.person), imagePersonColor: .custom.textWhite)
             HStack(spacing: 0) {
                 Text(helloText)
-                Text(userProfile?.name ?? "Guest")
+                if userProfile?.name != nil {
+                    Text(userProfile!.name)
+                } else {
+                    Text(LocalizedStringKey("Guest"))
+                }
             }
             .foregroundStyle(Color.custom.textWhite)
             .font(.custom(.semiBold, size: 16))

@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A10D693A2B31B6FD00100C19 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69392B31B6FD00100C19 /* TestView.swift */; };
 		A10D693E2B31BDD100100C19 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D693D2B31BDD100100C19 /* APIEndpoint.swift */; };
 		A10D69402B31BE4800100C19 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D693F2B31BE4800100C19 /* HTTPMethod.swift */; };
 		A10D69422B31C03500100C19 /* ContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69412B31C03500100C19 /* ContentType.swift */; };
 		A10D69442B31C39100100C19 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69432B31C39100100C19 /* APIError.swift */; };
 		A10D69462B31C6AE00100C19 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69452B31C6AE00100C19 /* HTTPClient.swift */; };
 		A10D69492B31CCB700100C19 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69482B31CCB700100C19 /* ServerResponse.swift */; };
-		A10D694C2B31E5AE00100C19 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D694B2B31E5AE00100C19 /* TestViewModel.swift */; };
 		A10D694F2B31E74B00100C19 /* Set+Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D694E2B31E74B00100C19 /* Set+Cancellable.swift */; };
 		A10D69512B31E77E00100C19 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69502B31E77E00100C19 /* Constants.swift */; };
 		A10D69532B31E7A200100C19 /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D69522B31E7A200100C19 /* Color+Ext.swift */; };
@@ -38,6 +36,10 @@
 		A13AA1952B485F11000951E4 /* OnboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1942B485F11000951E4 /* OnboardView.swift */; };
 		A13AA1972B485FBF000951E4 /* OnboardingMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1962B485FBF000951E4 /* OnboardingMainView.swift */; };
 		A13AA1992B4865F9000951E4 /* OnboardingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */; };
+		A13AA19E2B4976E7000951E4 /* TrailerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA19D2B4976E7000951E4 /* TrailerMainView.swift */; };
+		A13AA1A12B497D47000951E4 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = A13AA1A02B497D47000951E4 /* YouTubePlayerKit */; };
+		A13AA1A52B49BB58000951E4 /* FullMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1A42B49BB58000951E4 /* FullMovieView.swift */; };
+		A13AA1A72B49C122000951E4 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13AA1A62B49C122000951E4 /* WebView.swift */; };
 		A1AE47032B36FFC400254CB6 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */; };
 		A1AE47042B36FFC400254CB6 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */; };
 		A1AE47052B36FFC400254CB6 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */; };
@@ -48,6 +50,7 @@
 		A1AE470A2B36FFC400254CB6 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE47012B36FFC400254CB6 /* Montserrat-Regular.ttf */; };
 		A1AE470B2B36FFC400254CB6 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1AE47022B36FFC400254CB6 /* Montserrat-Thin.ttf */; };
 		A1AE470E2B37025D00254CB6 /* Font+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AE470D2B37025D00254CB6 /* Font+Ext.swift */; };
+		A1C9F1F82B5301C4005145EB /* ChristmasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C9F1F72B5301C4005145EB /* ChristmasViewModel.swift */; };
 		A1DE91FF2B39731C00779B9C /* MovieHorizontalMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE91FE2B39731C00779B9C /* MovieHorizontalMainCell.swift */; };
 		A1DE92022B3973B100779B9C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A1DE92012B3973B100779B9C /* Kingfisher */; };
 		A1DE92052B39771F00779B9C /* QueryParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DE92042B39771F00779B9C /* QueryParameters.swift */; };
@@ -87,14 +90,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A10D69392B31B6FD00100C19 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		A10D693D2B31BDD100100C19 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		A10D693F2B31BE4800100C19 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A10D69412B31C03500100C19 /* ContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentType.swift; sourceTree = "<group>"; };
 		A10D69432B31C39100100C19 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A10D69452B31C6AE00100C19 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		A10D69482B31CCB700100C19 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
-		A10D694B2B31E5AE00100C19 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		A10D694E2B31E74B00100C19 /* Set+Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+Cancellable.swift"; sourceTree = "<group>"; };
 		A10D69502B31E77E00100C19 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A10D69522B31E7A200100C19 /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
@@ -118,6 +119,9 @@
 		A13AA1942B485F11000951E4 /* OnboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardView.swift; sourceTree = "<group>"; };
 		A13AA1962B485FBF000951E4 /* OnboardingMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMainView.swift; sourceTree = "<group>"; };
 		A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingBoard.swift; sourceTree = "<group>"; };
+		A13AA19D2B4976E7000951E4 /* TrailerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerMainView.swift; sourceTree = "<group>"; };
+		A13AA1A42B49BB58000951E4 /* FullMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullMovieView.swift; sourceTree = "<group>"; };
+		A13AA1A62B49C122000951E4 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		A1AE46FA2B36FFC300254CB6 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		A1AE46FB2B36FFC300254CB6 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
 		A1AE46FC2B36FFC300254CB6 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		A1AE47022B36FFC400254CB6 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
 		A1AE470C2B3700C100254CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A1AE470D2B37025D00254CB6 /* Font+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Ext.swift"; sourceTree = "<group>"; };
+		A1C9F1F72B5301C4005145EB /* ChristmasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChristmasViewModel.swift; sourceTree = "<group>"; };
 		A1DE91FE2B39731C00779B9C /* MovieHorizontalMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHorizontalMainCell.swift; sourceTree = "<group>"; };
 		A1DE92042B39771F00779B9C /* QueryParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryParameters.swift; sourceTree = "<group>"; };
 		A1DE92062B398B7900779B9C /* AvatarLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarLineView.swift; sourceTree = "<group>"; };
@@ -172,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13AA1A12B497D47000951E4 /* YouTubePlayerKit in Frameworks */,
 				A1DE92022B3973B100779B9C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,15 +185,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A10D69382B31B6E100100C19 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				A10D69392B31B6FD00100C19 /* TestView.swift */,
-				A10D694B2B31E5AE00100C19 /* TestViewModel.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		A10D693B2B31BDAA00100C19 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				A10D69622B34963D00100C19 /* ChristmasView.swift */,
+				A1C9F1F72B5301C4005145EB /* ChristmasViewModel.swift */,
 			);
 			path = Christmas;
 			sourceTree = "<group>";
@@ -354,6 +352,16 @@
 				A13AA1982B4865F9000951E4 /* OnboardingBoard.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A13AA19C2B497562000951E4 /* Trailer */ = {
+			isa = PBXGroup;
+			children = (
+				A13AA19D2B4976E7000951E4 /* TrailerMainView.swift */,
+				A13AA1A42B49BB58000951E4 /* FullMovieView.swift */,
+				A13AA1A62B49C122000951E4 /* WebView.swift */,
+			);
+			path = Trailer;
 			sourceTree = "<group>";
 		};
 		A1AE46F92B36FF9700254CB6 /* Fonts */ = {
@@ -463,7 +471,7 @@
 				A10D69592B3491AB00100C19 /* Search */,
 				A10D695A2B3491D700100C19 /* Christmas */,
 				A10D695B2B3491F800100C19 /* Profile */,
-				A10D69382B31B6E100100C19 /* Test */,
+				A13AA19C2B497562000951E4 /* Trailer */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -505,6 +513,7 @@
 			name = MovieBar;
 			packageProductDependencies = (
 				A1DE92012B3973B100779B9C /* Kingfisher */,
+				A13AA1A02B497D47000951E4 /* YouTubePlayerKit */,
 			);
 			productName = MovieBar;
 			productReference = A1F745B92B30814F00006699 /* MovieBar.app */;
@@ -536,6 +545,7 @@
 			mainGroup = A1F745B02B30814F00006699;
 			packageReferences = (
 				A1DE92002B3973B100779B9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A13AA19F2B497D47000951E4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
 			);
 			productRefGroup = A1F745BA2B30814F00006699 /* Products */;
 			projectDirPath = "";
@@ -576,12 +586,12 @@
 				A1DE91FF2B39731C00779B9C /* MovieHorizontalMainCell.swift in Sources */,
 				A130802C2B388A1500188A9B /* View+Ext.swift in Sources */,
 				A1DE92242B3F019F00779B9C /* DetailMovieView.swift in Sources */,
+				A1C9F1F82B5301C4005145EB /* ChristmasViewModel.swift in Sources */,
 				A1DE92152B3AFA1E00779B9C /* MovieBigModel.swift in Sources */,
 				A13AA1972B485FBF000951E4 /* OnboardingMainView.swift in Sources */,
 				A1DE921E2B3DD36600779B9C /* MovieListView.swift in Sources */,
 				A1DE92222B3E037C00779B9C /* CustomBackButton.swift in Sources */,
 				A13AA18F2B4450D0000951E4 /* SearchViewModel.swift in Sources */,
-				A10D693A2B31B6FD00100C19 /* TestView.swift in Sources */,
 				A13080262B3847A100188A9B /* LikeHeartView.swift in Sources */,
 				A1DE921C2B3DCA3300779B9C /* DetailedMovieCellView.swift in Sources */,
 				A10D69552B33441C00100C19 /* MovieEndpoint.swift in Sources */,
@@ -590,7 +600,7 @@
 				A1DE921A2B3DBD5400779B9C /* TabbarManager.swift in Sources */,
 				A1DE92112B3AD2A300779B9C /* MovieVericalCellMainView.swift in Sources */,
 				A1DE92422B43361300779B9C /* EditProfileView.swift in Sources */,
-				A10D694C2B31E5AE00100C19 /* TestViewModel.swift in Sources */,
+				A13AA19E2B4976E7000951E4 /* TrailerMainView.swift in Sources */,
 				A10D69462B31C6AE00100C19 /* HTTPClient.swift in Sources */,
 				A1DE92382B43076C00779B9C /* NotificationView.swift in Sources */,
 				A10D69672B34981D00100C19 /* TabBottomView.swift in Sources */,
@@ -602,6 +612,7 @@
 				A130802A2B387F0400188A9B /* HomeViewModel.swift in Sources */,
 				A13AA1992B4865F9000951E4 /* OnboardingBoard.swift in Sources */,
 				A13080212B37248600188A9B /* LanguageManager.swift in Sources */,
+				A13AA1A52B49BB58000951E4 /* FullMovieView.swift in Sources */,
 				A1DE920F2B39DB7400779B9C /* CategoryMenuView.swift in Sources */,
 				A1DE92282B3F140900779B9C /* ShareButtonView.swift in Sources */,
 				A1DE92052B39771F00779B9C /* QueryParameters.swift in Sources */,
@@ -614,6 +625,7 @@
 				A1DE920B2B39BBBC00779B9C /* CategoryLineView.swift in Sources */,
 				A1DE923E2B4309A700779B9C /* AboutUsView.swift in Sources */,
 				A13080242B383CE300188A9B /* AvatarCircleView.swift in Sources */,
+				A13AA1A72B49C122000951E4 /* WebView.swift in Sources */,
 				A1F745BD2B30814F00006699 /* MovieBarApp.swift in Sources */,
 				A1DE922A2B42AC1B00779B9C /* WishlistCellView.swift in Sources */,
 				A1DE92442B4338BC00779B9C /* PillTextField.swift in Sources */,
@@ -858,6 +870,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A13AA19F2B497D47000951E4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 		A1DE92002B3973B100779B9C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -869,6 +889,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A13AA1A02B497D47000951E4 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A13AA19F2B497D47000951E4 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
 		A1DE92012B3973B100779B9C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A1DE92002B3973B100779B9C /* XCRemoteSwiftPackageReference "Kingfisher" */;

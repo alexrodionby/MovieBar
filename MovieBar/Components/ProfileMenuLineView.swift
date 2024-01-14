@@ -15,7 +15,7 @@ struct ProfileMenuLineView: View {
     var backgroundColor = Color.custom.primarySoft
     var imageFrameSize: CGFloat = 30
     var imageSelfSize: CGFloat = 24
-    var lineText: String = "Notification"
+    var lineText: LocalizedStringKey = LocalizedStringKey("Notification")
     var rightImage: Image = Image(.arrowback)
     var rightImageColor: Color = .custom.primaryBlueAccent
     var titleLineLimit: Int = 1
